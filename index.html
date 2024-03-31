@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Directory</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script>
+        function handleTripleClick() {
+            var clicks = 0;
+            return function() {
+                clicks++;
+                if (clicks === 3) {
+                    window.location.href = "https://www.google.com";
+                    clicks = 0;
+                }
+            };
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var footer = document.querySelector('footer');
+            footer.addEventListener('click', handleTripleClick());
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Directory</h1>
+    </header>
+
+    <main>
+        <ul id="category-list">
+            {% for post in posts %}
+                <li class="category">
+                    <h2><a href="{{ url_for('post', slug=post.slug) }}">{{ post.title }}</a></h2>
+                    <p class="post-preview">{{ post.body_preview }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </main>
+
+    <footer>
+        <a href="{{ url_for('index') }}">Back to Home</a>
+    </footer>
+</body>
+</html>
+
+
+

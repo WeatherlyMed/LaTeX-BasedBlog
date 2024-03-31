@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Dark background color */
+    color: #FFFFFF; /* White text color */
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 20pt; /* Corrected property name to 'font-size' */
+}
+
+main {
+    background-color: #455b55; /* Light gray background color for the text block */
+    padding: 15px;
+    border-radius: 8px; /* Optional: adds rounded corners to the text block */
+}
+p {
+    background-color: #292b2f;
+    padding: 10px;
+    border-radius:4px;
+}
+.category {
+    margin-bottom: 15px;
+}
+
+.toggle-btn {
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.sub-category {
+    margin-left: 20px;
+    display: none;
+}
